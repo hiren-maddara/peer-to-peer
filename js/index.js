@@ -25,6 +25,15 @@
 const btnMenuToggle = document.querySelector('.nav__menu--btn')
 const navMenu = document.querySelector('.nav__list')
 
+window.addEventListener('load', function(){
+    navMenu.classList.remove('--collapse')
+})
+
 btnMenuToggle.addEventListener('click', e => {
     navMenu.classList.toggle('--collapse')    
 })
+
+window.addEventListener('resize', e => {
+    navMenu.classList.remove('--collapse')
+})
+
