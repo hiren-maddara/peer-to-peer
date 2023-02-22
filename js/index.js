@@ -21,3 +21,10 @@
 // forms.forEach(form => {
 //     form.addEventListener('submit', (e) => e.preventDefault())
 // })
+
+const btnMenuToggle = document.querySelector('.nav__menu--btn')
+const navMenu = document.querySelector('.nav__list')
+
+btnMenuToggle.addEventListener('click', e => {
+    navMenu.classList.toggle('--collapse')    
+})
