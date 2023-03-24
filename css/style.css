@@ -25,7 +25,9 @@ body {
   font-family: var(--font-family);
   font-size: 62.5%;
   font-weight: 300;
-  background-color: var(--bg-light); }
+  background-color: var(--bg-light);
+  margin: 0px;
+  overflow-x: hidden; }
   @media screen and (max-width: 900px) {
     body {
       font-size: 50%; } }
@@ -232,6 +234,7 @@ a, a:link, a:visited {
   background-image: linear-gradient(to right top, rgba(10, 15, 41, 0.8), rgba(255, 98, 0, 0.9)), url("../img/hotel-1.jpg");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr 4rem; }
@@ -466,17 +469,29 @@ section {
 .testimonial {
   grid-column: 1 / span 1;
   grid-row: 1 / span 2;
-  width: 50%;
+  column-gap: 1rem;
+  width: 100%;
   justify-self: center;
   padding: 4rem;
+  margin-left: auto;
+  margin-right: auto;
   display: grid;
   grid-template-columns: 6rem 1fr;
-  grid-row: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   font-size: 1rem;
   font-weight: 300; }
+  @media screen and (max-width: 700) {
+    .testimonial {
+      width: 100%; } }
   .testimonial__img {
     grid-row: 1 / -1;
     grid-column: 1 / span 1; }
+  .testimonial img {
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    height: 100%;
+    object-fit: cover; }
   .testimonial__details {
     grid-column: 2 / span 1;
     grid-row: 1 / span 1;
@@ -524,12 +539,21 @@ section {
   font-size: 1rem;
   height: 23rem; }
   .member__img {
-    background: url("../img/hotel-1.jpg");
     background-size: cover;
     background-position: center;
     height: 70%;
     width: 100%;
-    position: relative; }
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center; }
+    .member__img-1 {
+      background: url("../img/esau-1.png"); }
+    .member__img-2 {
+      background: url("../img/henry.jpg"); }
+    .member__img-3 {
+      background: url("../img/duncan-2.jpg"); }
+    .member__img-4 {
+      background: url("../img/lawrence.jpg"); }
   .member__social {
     position: absolute;
     left: 0;
@@ -557,7 +581,7 @@ section {
   color: var(--text-color-medium);
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 3rem; }
+  grid-template-rows: 1fr auto; }
   .footer__content {
     grid-row: 1 / span 1;
     display: grid;
@@ -588,6 +612,9 @@ section {
     display: flex;
     align-items: center;
     justify-content: center; }
+    @media screen and (max-width: 700px) {
+      .footer__credits {
+        flex-direction: column; } }
     .footer__credits > * {
       margin: 0 .5rem;
       font-size: .8rem; }
